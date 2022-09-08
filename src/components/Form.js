@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
+import { popupContext, useContext } from '../context';
 
 const Form = () => {
+    const {popup,setPopup} = useContext(popupContext);
     const [form, setForm] = useState({
         amount: "",
         times: "",
@@ -25,6 +27,7 @@ const Form = () => {
         var rate1 = 0.0285;
         var sonuc = form.amount * (rate1 * (Math.pow((1 + rate1),(form.time) )))  / (Math.pow((1 + rate1), (form.time)) - 1);
         console.log(sonuc)
+        setPopup(true)
     }
     
     return (

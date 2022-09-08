@@ -1,0 +1,23 @@
+.popup{
+    position: fixed;
+    top: 135px;
+    left: 150px;
+    margin: auto auto;
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    background: #F3F4F8;
+    z-index: 10;
+}
+.popupText{
+    position: relative;
+    padding: 30px;
+    width: 100%;
+}
+.popupText .close{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
