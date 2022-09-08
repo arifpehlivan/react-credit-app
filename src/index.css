@@ -1,12 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'DM Serif Display', serif;
+  font-family: 'Open Sans', sans-serif;
 }
-
 
 header {
   display: flex;
@@ -23,7 +22,6 @@ header {
 header .logo {
   position: relative;
   font-size: 1.5em;
-
   color: #0045CD;
   text-decoration: none;
   font-weight: 600;
@@ -41,7 +39,6 @@ header .navigation {
 header .navigation li {
   list-style: none;
   margin: 0 50px;
-
   gap: 150px;
 }
 
@@ -76,7 +73,6 @@ header .signUp {
 
 
 header .login button {
-
   padding: 10px 15px;
   font-size: 15px;
   font-weight: 600;
@@ -90,13 +86,66 @@ header .login button:hover {
   opacity: 1;
 }
 
-main{
+main {
   position: absolute;
   top: 80px;
+  display: flex;
 }
 
 main .container {
-  margin-left: 255px;
-  margin-top: 20px;
-  width: 80%;
+  width: 60%;
+  margin: auto auto;
+  font-size: 1em;
+  line-height: 1.75;
+  font-family: inherit;
+  letter-spacing: .03125rem;
+}
+
+main .form {
+  margin-top: 10px;
+  margin: 10px auto;
+  width: 60%;
+  padding: 20px;
+  background: #F3F4F8;
+}
+
+main .form div {
+  margin-top: 10px;
+}
+
+
+select {
+  outline: none;
+  padding: 5px;
+  margin-left: 5px;
+}
+
+main .form input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  outline: none;
+  background: white;
+}
+
+main .form p {
+  margin-top: 10px;
+}
+
+main .form input:focus {
+  border: 1px solid #0045CD;
+  background: #e5eeff;
+  color: #151515;
+}
+
+.calculate button {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  cursor: pointer;
+  background: #0045CD;
+  color: white;
+  border-radius: 5px;
+  border: none;
 }
