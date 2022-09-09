@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import "./form.css"
-import { popupContext, useContext } from '../context';
+import { Context, useContext } from '../context';
 
 const Form = () => {
-    const {popup,setPopup} = useContext(popupContext);
+    const {popup,setPopup} = useContext(Context);
     const [form, setForm] = useState({
         amount: "",
         times: "",

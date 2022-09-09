@@ -1,9 +1,9 @@
 import React from 'react'
 import "./popup.css"
-import { popupContext, useContext } from '../context';
+import { Context, useContext } from '../context';
 
 const Popup = (props) => {
-    const {popup,setPopup} = useContext(popupContext);
+    const {popup,setPopup} = useContext(Context);
     return (popup) ? (
         <div className='popup'>
             <div className="popupText">

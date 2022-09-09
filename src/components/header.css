@@ -76,3 +76,9 @@ header .login button {
 header .login button:hover {
     opacity: 1;
 }
+
+@media (max-width: 1400px) {
+    header .navigation {
+        display: none;
+    }
+}

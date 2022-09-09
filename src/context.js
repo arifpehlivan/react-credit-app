@@ -1,6 +1,6 @@
 import { createContext, useContext } from "react";
 
 
-const popupContext = createContext();
+const Context = createContext();
 
-export { popupContext, useContext}
+export { Context, useContext}
