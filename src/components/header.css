@@ -27,6 +27,14 @@ header .navigation {
 
 }
 
+header .navigation span {
+    display: none;
+}
+
+header .navigation i{
+    display: none;
+}
+
 header .navigation li {
     list-style: none;
     margin: 0 50px;
@@ -77,8 +85,64 @@ header .login button:hover {
     opacity: 1;
 }
 
+header .toggle {
+    display: none;
+}
+
 @media (max-width: 1400px) {
     header .navigation {
         display: none;
+    }
+
+    header .active {
+        position: absolute;
+        top: 65px;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        height: 800px;
+        background: white;
+        z-index: 10;
+        /* font-size: 100px;
+        line-height: 100px; */
+    }
+
+    header .active li {
+        align-items: left;
+        justify-content: left;
+        margin: 20px 20px;
+        padding: 10px 10px;
+        display: flex;
+        font-size: 20px;
+        box-shadow: 0 4px 4px rgba(16, 11, 188, 0.4);
+        overflow: hidden;
+        border-radius: 5px;
+    }
+
+    header .active li a {
+        text-decoration: none;
+        color: black;
+    }
+
+    header .login {
+        position: absolute;
+        right: 15px;
+    }
+
+    header .toggle {
+        display: block;
+        position: absolute;
+        left: 20px;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    .active span{
+        margin-right: 10px;
+        font-size: 24px;
+    }
+    .active li i{
+        margin-left: auto;
+        cursor: pointer;
     }
 }

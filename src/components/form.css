@@ -72,4 +72,7 @@ main .form input:focus {
     main .container {
         width: 90%;
     }
+    main .container .form{
+        width: 70%;
+    }
 }
