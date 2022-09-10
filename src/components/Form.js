@@ -33,7 +33,7 @@ const Form = () => {
     }
     
     return (
-        <main> 
+        <main onClick={()=> setShow(false)}> 
         {/* opacity: show ? ("0.5") :( "1") */}
         {/* style={{filter: "brightness(50%)"}} */}
             <div className="container">
