@@ -3,7 +3,7 @@ import "./form.css"
 import { Context, useContext } from '../context';
 
 const Form = () => {
-    const {popup,setPopup} = useContext(Context);
+    const {popup,setPopup,show, setShow} = useContext(Context);
     const [form, setForm] = useState({
         amount: "",
         times: "",
@@ -29,10 +29,13 @@ const Form = () => {
         var sonuc = form.amount * (rate1 * (Math.pow((1 + rate1),(form.time) )))  / (Math.pow((1 + rate1), (form.time)) - 1);
         console.log(sonuc)
         setPopup(true)
+        setShow(false)
     }
     
     return (
-        <main>
+        <main> 
+        {/* opacity: show ? ("0.5") :( "1") */}
+        {/* style={{filter: "brightness(50%)"}} */}
             <div className="container">
                 <div className="text">
                     <h1>Loan Calculator</h1>

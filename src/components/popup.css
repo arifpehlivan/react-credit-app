@@ -1,4 +1,4 @@
-.popup{
+.popup {
     position: fixed;
     top: 135px;
     left: 150px;
@@ -11,13 +11,22 @@
     background: #F3F4F8;
     z-index: 10;
 }
-.popupText{
+
+.popupText {
     position: relative;
     padding: 30px;
     width: 100%;
 }
-.popupText .close{
+
+.popupText .close {
     position: absolute;
     top: 15px;
     right: 15px;
 }
+
+/* @media (max-width: 1400px) {
+    .popup {
+        width: 90%;
+        height: 90vh;
+    }
+} */

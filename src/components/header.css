@@ -89,6 +89,10 @@ header .toggle {
     display: none;
 }
 
+header .active{
+    display: none;
+}
+
 @media (max-width: 1400px) {
     header .navigation {
         display: none;
@@ -103,7 +107,7 @@ header .toggle {
         width: 400px;
         height: 800px;
         background: white;
-        z-index: 10;
+        z-index: 100;
         /* font-size: 100px;
         line-height: 100px; */
     }

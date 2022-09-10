@@ -1,0 +1,149 @@
+footer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    top: 1000px;
+    height: 500px;
+    width: 100%;
+    background: white;
+    color: white;
+    padding: 50px 100px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-shadow: inset 0px 11px 8px -10px rgba(16, 11, 188, 0.4);
+    box-sizing: border-box;
+}
+
+/* footer .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+} */
+
+footer div {
+    margin-right: 30px;
+}
+
+footer .container div{
+    display: inline-block;
+}
+
+
+footer .container .aboutUs {
+    width: 40%;
+}
+
+footer .container h2 {
+    position: relative;
+    color: black;
+    font-weight: 500;
+    margin-bottom: 15px;
+    white-space: nowrap;
+    display: block;
+}
+
+footer .container h2::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #f00;
+}
+
+footer p {
+    color: #999;
+}
+
+.social {
+    margin-top: 20px;
+    display: flex;
+}
+
+.social li {
+    list-style: none;
+}
+
+.social li a i{
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.social li a i:hover {
+    background: #f00;
+    color: white;
+}
+
+.social li a i {
+    color: black;
+    font-size: 20px;
+}
+
+.quickLinks {
+    position: relative;
+    width: 25%;
+}
+
+.quickLinks ul li a {
+    color: #999;
+    text-decoration: none;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.quickLinks ul li  {
+    list-style: none;
+    text-decoration: none;
+}
+
+.quickLinks ul li a:hover {
+    color: #0045CD;
+    border-bottom: 1px solid #0045CD;
+}
+
+.contact {
+    width: calc(35% - 60px);
+    margin-right: 0 !important;
+}
+
+.contact .info li {
+    display: flex;
+    margin-bottom: 16px;
+    color: black;
+}
+
+.contact .info li span{
+    white-space: nowrap;
+}
+
+.contact .info li i{
+    margin-right: 5px;
+    font-size: 20px;
+}
+
+.contact .info li p a{
+    text-decoration: none;
+    color: black;
+}
+
+.contact .info li a:hover {
+    color: #0045CD;
+    border-bottom: 1px solid #0045CD;
+}
+
+.copyrightText {
+    width: 100%;
+    padding: 8px 100px;
+    text-align: center;
+    color: black;
+    margin-top: 150px;
+} 

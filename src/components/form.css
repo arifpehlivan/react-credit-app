@@ -22,7 +22,7 @@ main .container .text h1 {
 main .form {
     margin-top: 10px;
     margin: 10px auto;
-    width: 60%;
+    width: 70%;
     padding: 20px;
     background: #F3F4F8;
 }
@@ -70,7 +70,7 @@ main .form input:focus {
 
 @media (max-width: 1400px) {
     main .container {
-        width: 90%;
+        width: 80%;
     }
     main .container .form{
         width: 70%;

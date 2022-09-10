@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import "./header.css"
-    
+import { Context, useContext } from '../context';    
 import {FaBars} from 'react-icons/fa';
 import {AiOutlineClose} from 'react-icons/ai';
 import {RiExchangeDollarLine} from 'react-icons/ri';
@@ -9,7 +9,8 @@ import {MdArrowForwardIos} from 'react-icons/md';
 import {BsBank, BsFillCreditCard2BackFill, BsCurrencyDollar} from 'react-icons/bs';
 
 const Header = () => {
-    const [show,setShow] = useState(false);
+    // const [show,setShow] = useState(false);
+    const {show,setShow} = useContext(Context);
     return (
         <header>
             <div className="toggle" onClick={()=> setShow(!show)}>
