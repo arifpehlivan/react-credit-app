@@ -57,7 +57,6 @@ footer p {
 }
 
 .social {
-    margin-top: 20px;
     display: flex;
 }
 
@@ -147,3 +146,31 @@ footer p {
     color: black;
     margin-top: 150px;
 } 
+
+@media (max-width: 1200px) {
+    footer {
+        padding: 40px;
+        padding-left: 150px;
+    }
+
+    footer .container {
+        flex-direction: column;
+    }
+
+    footer .container  {
+        margin-bottom: 40px;
+    }
+
+    footer .container .aboutUs, .quickLinks, .contact {
+        width: 100%;
+        margin-top: 20px;
+    }
+    /* footer .container .aboutUs{
+        width: 90%;
+        margin-top: 20px;
+    } */
+
+    .copyrightText {
+        padding: 8px 40px;
+    }
+}
