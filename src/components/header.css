@@ -6,8 +6,9 @@ header {
     left: 0;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 100px;
+    padding: 10px 100px;
     box-shadow: 0 4px 4px rgba(16, 11, 188, 0.4);
+    box-sizing: border-box;
 }
 
 header .logo {
@@ -19,11 +20,19 @@ header .logo {
 
 }
 
+header .navigation ul {
+    height: 80px;
+    background: red;
+    justify-content: center;
+    align-items: center;
+}
+
 header .navigation {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 10px 0;
+
+    /* margin: 10px 0; */
 
 }
 
@@ -31,7 +40,7 @@ header .navigation span {
     display: none;
 }
 
-header .navigation i{
+header .navigation i {
     display: none;
 }
 
@@ -39,6 +48,8 @@ header .navigation li {
     list-style: none;
     margin: 0 50px;
     gap: 150px;
+    /* height: 50px; */
+
 }
 
 header .navigation li a {
@@ -67,7 +78,6 @@ header .signUp {
     border: 1px solid blue;
     border-radius: 5px;
     padding: 20px 10px;
-
 }
 
 
@@ -89,9 +99,49 @@ header .toggle {
     display: none;
 }
 
-header .active{
+header .active {
     display: none;
 }
+
+.bankingText {
+    display: none;
+}
+
+.navigation li.banking:hover .bankingText {
+    display: flex;
+    gap: 50px;
+    position: absolute;
+    top: 80px;
+    left: 10px;
+    padding: 20px 20px;
+    z-index: 1000;
+    color: black;
+    background: white;
+    width: 100%;
+    min-height: 300px;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding-bottom: 50px;
+}
+
+
+.bankingText p {
+    padding-top: 20px;
+    font-size: 15px;
+}
+
+.bankingText div {
+    width: 24%;
+    padding-right: 50px;
+}
+
+.bankingText div:nth-child(1),
+.bankingText div:nth-child(2),
+.bankingText div:nth-child(3) {
+    border-right: 1px solid #0045CD;
+}
+
+
 
 @media (max-width: 1400px) {
     header .navigation {
@@ -108,8 +158,6 @@ header .active{
         height: 800px;
         background: white;
         z-index: 100;
-        /* font-size: 100px;
-        line-height: 100px; */
     }
 
     header .active li {
@@ -141,11 +189,13 @@ header .active{
         font-size: 20px;
         cursor: pointer;
     }
-    .active span{
+
+    .active span {
         margin-right: 10px;
         font-size: 24px;
     }
-    .active li i{
+
+    .active li i {
         margin-left: auto;
         cursor: pointer;
     }
