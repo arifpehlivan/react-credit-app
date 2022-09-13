@@ -31,9 +31,6 @@ header .navigation {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-
-    /* margin: 10px 0; */
-
 }
 
 header .navigation span {
@@ -48,8 +45,6 @@ header .navigation li {
     list-style: none;
     margin: 0 50px;
     gap: 150px;
-    /* height: 50px; */
-
 }
 
 header .navigation li a {
@@ -197,6 +192,7 @@ header .active {
 
     .active li i {
         margin-left: auto;
+        color: #0045CD;
         cursor: pointer;
     }
 }

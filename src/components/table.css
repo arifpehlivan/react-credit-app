@@ -1,0 +1,25 @@
+table{
+    background: white;
+    width: 100%;
+}
+table tr {
+    display: flex;
+    justify-content: space-between;
+}
+
+table th {
+    display: flex;
+    justify-content: space-between;
+    /* width: 130px; */
+}
+
+table td {
+    display: flex;
+    /* width: 130px; */
+    justify-content: space-between;
+    margin-left: 0px;
+}
+
+table tr{
+    margin-top: 10px;
+}

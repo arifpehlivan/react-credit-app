@@ -24,7 +24,7 @@ footer div {
     margin-right: 30px;
 }
 
-footer .container div{
+footer .container div {
     display: inline-block;
 }
 
@@ -64,7 +64,7 @@ footer p {
     list-style: none;
 }
 
-.social li a i{
+.social li a i {
     display: inline-block;
     width: 45px;
     height: 45px;
@@ -99,7 +99,7 @@ footer p {
     white-space: nowrap;
 }
 
-.quickLinks ul li  {
+.quickLinks ul li {
     list-style: none;
     text-decoration: none;
 }
@@ -120,16 +120,16 @@ footer p {
     color: black;
 }
 
-.contact .info li span{
+.contact .info li span {
     white-space: nowrap;
 }
 
-.contact .info li i{
+.contact .info li i {
     margin-right: 5px;
     font-size: 20px;
 }
 
-.contact .info li p a{
+.contact .info li p a {
     text-decoration: none;
     color: black;
 }
@@ -145,30 +145,33 @@ footer p {
     text-align: center;
     color: black;
     margin-top: 150px;
-} 
+}
 
 @media (max-width: 1200px) {
     footer {
         padding: 40px;
-        padding-left: 150px;
+        padding-left: 100px;
     }
 
     footer .container {
         flex-direction: column;
     }
 
-    footer .container  {
+    footer .container {
         margin-bottom: 40px;
     }
 
-    footer .container .aboutUs, .quickLinks, .contact {
+    footer .container 
+    .quickLinks,
+    .contact {
         width: 100%;
         margin-top: 20px;
     }
-    /* footer .container .aboutUs{
-        width: 90%;
+
+    footer .container .aboutUs {
+        width: 60%;
         margin-top: 20px;
-    } */
+    }
 
     .copyrightText {
         padding: 8px 40px;

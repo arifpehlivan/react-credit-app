@@ -1,21 +1,49 @@
 import React, { useState } from 'react'
 import "./form.css"
 import { Context, useContext } from '../context';
+import CurrencyFormat from 'react-currency-format';
 
 const Form = () => {
-    const {popup,setPopup,show, setShow} = useContext(Context);
-    const [form, setForm] = useState({
-        amount: "",
-        times: "",
-        time: "",
-        rate: "",
-        bsmv: "",
-        kkdf: ""
-    })
+    const {setPopup, setShow, form, setForm, tableArray} = useContext(Context);
+    // const [form, setForm] = useState({
+    //     amount: "",
+    //     times: "",
+    //     time: "",
+    //     rate: "",
+    //     bsmv: "",
+    //     kkdf: ""
+    // })
     const onChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
     }
     const calculate = () => {
+        // var dataTable = [
+        //     {
+                
+        //         "a": "2",
+        //         "b": "2",
+        //         "c": "2",
+        //         "d": "2",
+        //         "e": "2",
+        //         "f": "2",
+        //         "g": "2",
+        //     }
+        // ]
+        // setTable(dataTable);
+        // tableArray.length = form.time;
+        // console.log("tableArray.length",tableArray.length);
+        // tableArray.map((item,index) => {
+
+        //     console.log("item",item);
+        //     console.log("index",index);
+        // })
+        // for(var i=0; i< 12; i++){
+        //     for(var x=0; x<7; x++){
+        //         tableArray[i][x] = i  ;
+        //     }
+        // }
+        console.log(tableArray);
+        // tableArray[0][0] = 1;
         // Basit → Kâr = ( Anapara * Kâr oranı * ( gün sayısı / 30 ))
         // Bileşik → Kâr = ( Anapara * ( ( 1 + kâr oranı) ^ (gün sayısı / 30) ) ) - Anapara
         const basitKar = form.amount * form.rate * (form.time / 12);
@@ -27,7 +55,7 @@ const Form = () => {
         // var rate1 = (form.rate / 100) + (form.bsmv / 100) + (form.kkdf / 100) ;
         var rate1 = 0.0285;
         var sonuc = form.amount * (rate1 * (Math.pow((1 + rate1),(form.time) )))  / (Math.pow((1 + rate1), (form.time)) - 1);
-        console.log(sonuc)
+        console.log("sonuc",sonuc)
         setPopup(true)
         setShow(false)
     }
@@ -44,15 +72,18 @@ const Form = () => {
                     <div className="form">
                         <div>
                             <p>Loan Amount</p>
-                            <input
+                            {/* <input
                                 placeholder='100.000₺'
                                 name="amount"
                                 value={form.name}
-                                onChange={onChange} />
+                                onChange={onChange} /> */}
+                                <CurrencyFormat thousandSeparator={true} prefix={'₺'} name="amount"
+                                value={form.name}
+                                onChange={onChange} placeholder='₺100.000'/>
                         </div>
                         <div className='time'>
                             <p>Loan term in
-                                <select name="times" id="time" value={form.name}
+                                <select name="times" value={form.name}
                                 onChange={onChange}>
                                     <option value="weeks" >Weeks</option>
                                     <option value="monts" defaultValue>Monts</option>

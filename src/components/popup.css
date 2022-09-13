@@ -24,6 +24,13 @@
     right: 15px;
 }
 
+.popupText button{
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
 /* @media (max-width: 1400px) {
     .popup {
         width: 90%;
