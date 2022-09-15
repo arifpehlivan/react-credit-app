@@ -3,20 +3,7 @@ import "./table.css"
 import { Context, useContext } from '../context';
 
 const Table = () => {
-    const { data1, column, table } = useContext(Context);
-    
-    // var dataTable = [
-    //     {
-    //         "a": "2",
-    //         "b": "2",
-    //         "c": "2",
-    //         "d": "2",
-    //         "e": "2",
-    //         "f": "2",
-    //         "g": "2",
-    //     }
-    // ]
-    // setTable(dataTable);
+    const { column, table } = useContext(Context);
     return (
         <table>
             <thead>
@@ -35,8 +22,7 @@ const TableHeadItem = ({ item }) => <th>{item.heading}</th>
 const TableRow = ({ item, column }) => (
     <tr>
         {column.map((columnItem, index) => {
-            return <td key={index}>{item[`${columnItem.value}`]}</td>
-            // {`${index}`}
+            return <td key={index}>{item[`${columnItem.value}`]}{columnItem.value === "taksitNo" ? " " : " TL"}</td>
         })}
     </tr>
 )
