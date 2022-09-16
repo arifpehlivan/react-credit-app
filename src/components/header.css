@@ -20,11 +20,11 @@ header .logo {
 
 }
 
-header.modeActive {
-    /* color: white;
-    background: #151515; */
-    /* opacity: 0.7; */
-}
+/* header.modeActive {
+    color: white;
+    background: #151515;
+    opacity: 0.7;
+} */
 
 /* header.modeActive .logo{
     color: white;
@@ -32,7 +32,7 @@ header.modeActive {
 
 header .navigation ul {
     height: 80px;
-    background: red;
+    /* background: red; */
     justify-content: center;
     align-items: center;
 }
@@ -77,6 +77,7 @@ header .navigation li a:hover {
 header .signIn {
     margin-right: 10px;
     border: none;
+    border-radius: 5px;
 }
 
 header .signUp {
@@ -84,6 +85,7 @@ header .signUp {
     border-radius: 5px;
     padding: 20px 10px;
 }
+
 /* header.modeActive .signIn{
     color: #fff;
     border: none;
@@ -98,14 +100,15 @@ header .login button {
     font-size: 15px;
     font-weight: 600;
     color: blue;
-    opacity: 0.7;
+    /* opacity: 0.7; */
     background: inherit;
     cursor: pointer;
 }
 
 
 header .login button:hover {
-    opacity: 1;
+    color: white;
+    background: #0045CD;
 }
 
 header .toggle {
@@ -154,18 +157,18 @@ header .active {
     border-right: 1px solid #0045CD;
 }
 
-.mode{
+.mode {
     position: absolute;
     right: 30px;
 }
 
-input[type="checkbox"]{
+input[type="checkbox"] {
     -webkit-appearance: none;
     visibility: hidden;
     display: none;
 }
 
-.check{
+.check {
     position: relative;
     display: block;
     width: 40px;
@@ -177,7 +180,7 @@ input[type="checkbox"]{
     transition: ease-in 0.4s;
 }
 
-.check::before{
+.check::before {
     content: "";
     position: absolute;
     top: 2px;
@@ -189,18 +192,18 @@ input[type="checkbox"]{
     /* transition: 0.1s; */
 }
 
-input[type="checkbox"]:checked ~ .check{
+input[type="checkbox"]:checked ~.check {
     background: #0045CD;
-    /* box-shadow: 0 0 0 2000px black; */
-    /* opacity: 0.4; */
+    box-shadow: 0 0 0 2000px black;
+    opacity: 0.5;
     z-index: 1000;
 }
 
-input[type="checkbox"]:checked ~ .check::before{
+input[type="checkbox"]:checked~.check::before {
     transform: translateX(-50px);
 }
 
-.check::after{
+.check::after {
     content: "";
     position: absolute;
     top: 2px;
@@ -213,7 +216,7 @@ input[type="checkbox"]:checked ~ .check::before{
     transform: translateX(50px);
 }
 
-input[type="checkbox"]:checked ~ .check::after{
+input[type="checkbox"]:checked~.check::after {
     transform: translateX(0px);
 }
 
@@ -223,9 +226,9 @@ input[type="checkbox"]:checked ~ .check::after{
         display: none;
     }
 
-    header.modeActive li span{
+    /* header.modeActive li span {
         color: black;
-    }
+    } */
 
     /* header .active .modeActive{
         background: black;

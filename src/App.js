@@ -135,37 +135,38 @@ function App() {
   // var karOranı = (form.amount * form.rate * weeks)
   // console.log("karOranı",karOranı)
   // console.log(form.amount);
-  form.rate = 0.0228;
-  form.time = 12;
-  var taksitTutari = (form.amount * (form.rate * (Math.pow((1 + form.rate), (form.time)))) / (Math.pow((1 + form.rate), (form.time)) - 1));
+  // form.rate = 0.0228;
+  // form.time = 12;
+  var rate1 = 2.85;
+  var taksitTutari = (form.amount * ((rate1 / 100) * (Math.pow((1 + (rate1 / 100)), (form.time)))) / (Math.pow((1 + (rate1 / 100)), (form.time)) - 1));
   var timeFactor = 1;
   if (form.times === "weeks") {
     timeFactor = 7 / 30;
   } else if (form.times === "years") {
     timeFactor = 365 / 30;
   }
-  var karTutari = (form.amount * form.rate * timeFactor)
+  var karTutari = (form.amount * (form.rate / 100) * timeFactor)
   // console.log("taksitTutari", taksitTutari);
   dataTable.map((item, index) => {
     dataTable[index].taksitNo = index + 1;
     dataTable[index].taksitTutar = taksitTutari.toFixed(2);
-    dataTable[0].anaPara = (taksitTutari - ((karTutari) + (karTutari * 0.15) + (karTutari / 10))).toFixed(2);
-    dataTable[0].kalanAnaPara = (form.amount - ((taksitTutari - (karTutari) + (karTutari * 0.15) + (karTutari / 10)))).toFixed(2);
+    dataTable[0].anaPara = (taksitTutari - ((karTutari) + (karTutari * form.kkdf / 100) + (karTutari * form.bsmv / 100))).toFixed(2);
+    dataTable[0].kalanAnaPara = (form.amount - ((taksitTutari - ((karTutari) + (karTutari * form.kkdf / 100) + (karTutari * form.bsmv / 100))))).toFixed(2);
     dataTable[0].kar = (karTutari).toFixed(2);
-    dataTable[0].kkdf = (karTutari * 0.15).toFixed(2);
-    dataTable[0].bsmv = (karTutari / 10).toFixed(2);
+    dataTable[0].kkdf = (karTutari * form.kkdf / 100).toFixed(2);
+    dataTable[0].bsmv = (karTutari * form.bsmv / 100).toFixed(2);
     if (index > 0) {
-      var kar = dataTable[index].kar = (dataTable[index - 1].kalanAnaPara * form.rate).toFixed(2);
-      var k = dataTable[index].kkdf = (dataTable[index].kar * 0.15).toFixed(2);
-      var b = dataTable[index].bsmv = (dataTable[index].kar / 10).toFixed(2);
+      var kar = dataTable[index].kar = (dataTable[index - 1].kalanAnaPara * form.rate / 100).toFixed(2);
+      var k = dataTable[index].kkdf = (dataTable[index].kar * form.kkdf / 100).toFixed(2);
+      var b = dataTable[index].bsmv = (dataTable[index].kar * form.bsmv / 100).toFixed(2);
       kar = Number(kar)
       k = Number(k)
       b = Number(b)
       var total = kar + k + b;
       dataTable[index].anaPara = (taksitTutari - total).toFixed(2);
       dataTable[index].kalanAnaPara = (dataTable[index - 1].kalanAnaPara - dataTable[index].anaPara).toFixed(2);
+      // dataTable[11].kalanAnaPara = 0;
     }
-
   })
 
   useEffect(() => {

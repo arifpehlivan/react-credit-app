@@ -22,7 +22,7 @@ const TableHeadItem = ({ item }) => <th>{item.heading}</th>
 const TableRow = ({ item, column }) => (
     <tr>
         {column.map((columnItem, index) => {
-            return <td key={index}>{item[`${columnItem.value}`]}{columnItem.value === "taksitNo" ? " " : " TL"}</td>
+            return <td key={index}>{item[`${columnItem.value}`]}{columnItem.value === "taksitNo" || columnItem.value === "kar" || columnItem.value === "kkdf" || columnItem.value === "bsmv" ? " " : " TL"}</td>
         })}
     </tr>
 )
