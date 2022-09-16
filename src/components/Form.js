@@ -1,14 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import "./form.css"
 import { Context, useContext } from '../context';
-import CurrencyFormat from 'react-currency-format';
 import { useEffect } from 'react';
 import { modeContext } from '../modeContext';
+import CurrencyFormat from 'react-currency-format';
 
 const Form = () => {
     const [disabled, setDisabled] = useState(true);
+    // const [showSpan, setShowSpan] = useState(false);
     const { setPopup, setShow, form, setForm } = useContext(Context);
-    const { mode } = useContext(modeContext);
+    const inputRef = useRef()
+    // const { mode } = useContext(modeContext);
     const onChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
         // console.log("form.amount",form.amount); 
@@ -20,11 +22,24 @@ const Form = () => {
     useEffect(() => {
         function isNull() {
             if (form.amount && form.times && form.rate && form.kkdf && form.bsmv) {
+                inputRef.current.style.opacity = "1";
                 setDisabled(false);
+                
             }
         }
         isNull()
     }, [form])
+    // inputRef.current.style.opacity = "0.5";
+    // const isClick = () => {
+    //     // setShowSpan(true)
+    //     // spanRef.current.focus();
+    //     spanRef.current.focus();
+    //     console.log("click")
+    // }
+
+    // spanRef.current?.focus();
+    // spanRef.current.style.color = "red";
+    // spanRef.current.style.display = "block";
     return (
         <main onClick={() => setShow(false)}>
             <div className="container">
@@ -40,10 +55,17 @@ const Form = () => {
                             placeholder='100.000₺'
                             name="amount"
                             value={form.name}
-                            onChange={onChange} />
+                            onChange={onChange}
+                            />
                         {/* <CurrencyFormat thousandSeparator={true}  name="amount"
                                 value={form.name}
-                                onChange={onChange} placeholder='₺100.000' /> */}
+                                onChange={onChange} placeholder='₺100.000' /> form.amount ? "errorMessage" : "" */}
+                        <span className="errorMessage" >
+                            Loan amount cannot be empty
+                        </span>
+                        {/* <span ref={spanRef}>
+                            Loan amount cannot be empty
+                        </span> */}
                     </div>
                     <div className='time'>
                         <p>Loan term in
@@ -54,22 +76,36 @@ const Form = () => {
                                 <option value="years">Years</option>
                             </select> (Please select time)</p>
                         <input placeholder='12' name="time" value={form.name}
-                            onChange={onChange} />
+                            onChange={onChange}  />
+                        <span className="errorMessage" >
+                            Loan term cannot be empty
+                        </span>
                     </div>
                     <div className="rate">
                         <p>Profit Rate</p>
                         <input placeholder='2.28' name="rate" value={form.name}
-                            onChange={onChange} />
+                            onChange={onChange}  />
+                        <span className="errorMessage">
+                            Rate cannot be empty
+                        </span>
                         <p>Kkdf</p>
                         <input placeholder='15' name="kkdf" value={form.name}
-                            onChange={onChange} />
+                            onChange={onChange}  />
+                        <span className="errorMessage">
+                            Kkdf cannot be empty
+                        </span>
                         <p>Bsmv</p>
                         <input placeholder='5' name="bsmv" value={form.name}
-                            onChange={onChange} />
+                            onChange={onChange}  />
+                        <span className="errorMessage">
+                            Bsmv cannot be empty
+                        </span>
                     </div>
                     <div className="calculate">
                         {/*className={disabled ? "calculate disabled" : "calculate"}*/}
-                        <button onClick={calculate} disabled={disabled}>Calculate</button>
+                        <button onClick={calculate} disabled={disabled} ref={inputRef}>Calculate</button>
+                        {/* <input ref={spanRef} />
+                        <button  onClick={isClick}>Calculate</button> */}
                     </div>
                 </div>
             </div>

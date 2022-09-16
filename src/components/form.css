@@ -67,6 +67,14 @@ main .form input:focus {
     color: white;
     border-radius: 5px;
     border: none;
+    opacity: 0.5;
+}
+
+.errorMessage{
+    color: red;
+    font-size: 12px;
+    /* visibility: hidden; */
+    display: none;
 }
 
 /* .calculate.disabled{

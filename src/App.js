@@ -14,10 +14,10 @@ function App() {
   const [form, setForm] = useState({
     amount: Number,
     times: "",
-    time: Number,
-    rate: Number,
-    bsmv: Number,
-    kkdf: Number
+    time: "",
+    rate: "",
+    bsmv: "",
+    kkdf: ""
   })
   const [table, setTable] = useState([])
   var dataTable = [
