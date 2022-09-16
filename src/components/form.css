@@ -68,6 +68,8 @@ main .form input:focus {
     border: none;
 }
 
+
+
 @media (max-width: 1400px) {
     main .container {
         width: 80%;

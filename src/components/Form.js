@@ -2,18 +2,28 @@ import React, { useState } from 'react'
 import "./form.css"
 import { Context, useContext } from '../context';
 import CurrencyFormat from 'react-currency-format';
+import { useEffect } from 'react';
 
 const Form = () => {
+    const [disabled, setDisabled] = useState(true);
     const {setPopup, setShow, form, setForm} = useContext(Context);
     const onChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
-        console.log("form.amount",form.amount); 
+        // console.log("form.amount",form.amount); 
     }
     const calculate = () => {
         setPopup(true)
         setShow(false)
     }
-    
+    useEffect(() => {
+        function isNull(){
+            if(form.time && form.times && form.rate && form.kkdf && form.bsmv){
+                setDisabled(false);
+            }
+            console.log(disabled);
+        }
+        isNull()
+    },[form])
     return (
         <main onClick={()=> setShow(false)}> 
             <div className="container">
@@ -49,15 +59,15 @@ const Form = () => {
                             <p>Profit Rate</p>
                             <input placeholder='2.28' name="rate" value={form.name}
                                 onChange={onChange}/>
-                            <p>Bsmv</p>
-                            <input placeholder='3' name="bsmv" value={form.name}
+                                <p>Kkdf</p>
+                            <input placeholder='15' name="kkdf" value={form.name}
                                 onChange={onChange}/>
-                            <p>Kkdf</p>
-                            <input placeholder='3' name="kkdf" value={form.name}
+                            <p>Bsmv</p>
+                            <input placeholder='5' name="bsmv" value={form.name}
                                 onChange={onChange}/>
                         </div>
                         <div className="calculate">
-                            <button onClick={calculate}>Calculate</button>
+                            <button onClick={calculate} disabled={disabled}>Calculate</button>
                         </div>
                     </div>
             </div>

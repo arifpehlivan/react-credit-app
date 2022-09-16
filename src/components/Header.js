@@ -19,7 +19,7 @@ const Header = () => {
     //         setMode(!mode)
     //     }
     // },[mode])
-    console.log(mode);
+    // console.log(mode);
     return (
         <header className={mode ? "modeActive" : "modePasif"}>
             <div className="toggle" onClick={() => setShow(!show)}>

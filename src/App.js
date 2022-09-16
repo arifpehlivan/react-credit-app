@@ -16,8 +16,8 @@ function App() {
     times: "",
     time: Number,
     rate: Number,
-    bsmv: "",
-    kkdf: ""
+    bsmv: Number,
+    kkdf: Number
   })
   const [table, setTable] = useState([])
   var dataTable = [
@@ -145,7 +145,7 @@ function App() {
     timeFactor = 365 / 30;
   }
   var karTutari = (form.amount * form.rate * timeFactor)
-  console.log("taksitTutari", taksitTutari);
+  // console.log("taksitTutari", taksitTutari);
   dataTable.map((item, index) => {
     dataTable[index].taksitNo = index + 1;
     dataTable[index].taksitTutar = taksitTutari.toFixed(2);
