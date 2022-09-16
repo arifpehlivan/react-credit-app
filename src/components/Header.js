@@ -1,18 +1,27 @@
 import React, { useState } from 'react'
 import "./header.css"
 import { Context, useContext } from '../context';
+import {modeContext} from "../modeContext";
 import { FaBars } from 'react-icons/fa';
 import { AiOutlineClose } from 'react-icons/ai';
 import { RiExchangeDollarLine } from 'react-icons/ri';
 import { GiPalmTree, GiShakingHands } from 'react-icons/gi';
 import { MdArrowForwardIos } from 'react-icons/md';
 import { BsBank, BsFillCreditCard2BackFill, BsCurrencyDollar } from 'react-icons/bs';
+import { useEffect } from 'react';
 
 const Header = () => {
     // const [show,setShow] = useState(false);
     const { show, setShow } = useContext(Context);
+    const {mode,setMode} = useContext(modeContext);
+    // useEffect(() => {
+    //     function changeMode() {
+    //         setMode(!mode)
+    //     }
+    // },[mode])
+    console.log(mode);
     return (
-        <header>
+        <header className={mode ? "modeActive" : "modePasif"}>
             <div className="toggle" onClick={() => setShow(!show)}>
                 {show ? (<AiOutlineClose />) : (<FaBars />)}
             </div>
@@ -95,6 +104,12 @@ const Header = () => {
             <div className="login">
                 <button className="signIn">Sign In</button>
                 <button className="signUp">Sign Up</button>
+            </div>
+            <div className="mode" >
+                <label >
+                    <input type="checkbox" onClick={() => setMode(!mode)}/>
+                    <span className="check"  ></span>
+                </label>
             </div>
         </header>
     )

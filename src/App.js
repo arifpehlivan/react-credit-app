@@ -5,10 +5,12 @@ import Form from './components/Form';
 import Header from './components/Header';
 import Popup from './components/Popup';
 import { Context } from "./context.js";
+import { modeContext } from "./modeContext";
 
 function App() {
   const [popup, setPopup] = useState(false);
   const [show, setShow] = useState(false);
+  const [mode, setMode] = useState(false);
   const [form, setForm] = useState({
     amount: Number,
     times: "",
@@ -139,12 +141,12 @@ function App() {
   var timeFactor = 1;
   if (form.times === "weeks") {
     timeFactor = 7 / 30;
-  } else if(form.times === "years") {
+  } else if (form.times === "years") {
     timeFactor = 365 / 30;
   }
   var karTutari = (form.amount * form.rate * timeFactor)
-  console.log("taksitTutari",taksitTutari);
-  dataTable.map((item, index) =>{
+  console.log("taksitTutari", taksitTutari);
+  dataTable.map((item, index) => {
     dataTable[index].taksitNo = index + 1;
     dataTable[index].taksitTutar = taksitTutari.toFixed(2);
     dataTable[0].anaPara = (taksitTutari - ((karTutari) + (karTutari * 0.15) + (karTutari / 10))).toFixed(2);
@@ -192,12 +194,17 @@ function App() {
     tableArray,
     dataTable
   }
+  const modeData = {
+    mode, setMode
+  }
   return (
     <Context.Provider value={data}>
-      <Header />
-      <Popup />
-      <Form />
-      <Footer />
+      <modeContext.Provider value={modeData}>
+        <Header />
+        <Popup />
+        <Form />
+        <Footer />
+      </modeContext.Provider>
     </Context.Provider>
   );
 }

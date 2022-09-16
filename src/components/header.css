@@ -20,6 +20,16 @@ header .logo {
 
 }
 
+header.modeActive {
+    /* color: white;
+    background: #151515; */
+    /* opacity: 0.7; */
+}
+
+/* header.modeActive .logo{
+    color: white;
+} */
+
 header .navigation ul {
     height: 80px;
     background: red;
@@ -74,7 +84,14 @@ header .signUp {
     border-radius: 5px;
     padding: 20px 10px;
 }
-
+/* header.modeActive .signIn{
+    color: #fff;
+    border: none;
+}
+header.modeActive .signUp{
+    color: #fff;
+    border: 1px solid #fff;
+} */
 
 header .login button {
     padding: 10px 15px;
@@ -85,6 +102,7 @@ header .login button {
     background: inherit;
     cursor: pointer;
 }
+
 
 header .login button:hover {
     opacity: 1;
@@ -136,12 +154,83 @@ header .active {
     border-right: 1px solid #0045CD;
 }
 
+.mode{
+    position: absolute;
+    right: 30px;
+}
+
+input[type="checkbox"]{
+    -webkit-appearance: none;
+    visibility: hidden;
+    display: none;
+}
+
+.check{
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 20px;
+    background: #0045CD;
+    cursor: pointer;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: ease-in 0.4s;
+}
+
+.check::before{
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background: #fff;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    /* transition: 0.1s; */
+}
+
+input[type="checkbox"]:checked ~ .check{
+    background: #fff;
+    /* box-shadow: 0 0 0 2000px black; */
+    /* opacity: 0.4; */
+    z-index: 1000;
+}
+
+input[type="checkbox"]:checked ~ .check::before{
+    transform: translateX(-50px);
+}
+
+.check::after{
+    content: "";
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: black;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    /* transition: 0.1s; */
+    transform: translateX(50px);
+}
+
+input[type="checkbox"]:checked ~ .check::after{
+    transform: translateX(0px);
+}
 
 
 @media (max-width: 1400px) {
     header .navigation {
         display: none;
     }
+
+    header.modeActive li span{
+        color: black;
+    }
+
+    /* header .active .modeActive{
+        background: black;
+        font-size: 150px;
+    } */
 
     header .active {
         position: absolute;
@@ -174,7 +263,7 @@ header .active {
 
     header .login {
         position: absolute;
-        right: 15px;
+        right: 125px;
     }
 
     header .toggle {
