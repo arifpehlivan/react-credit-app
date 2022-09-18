@@ -21,13 +21,10 @@ function App() {
   })
   const [table, setTable] = useState([])
   var dataTable = []
-  for(var i=0;i<form.time;i++){
-    dataTable[i]={"taksitNo":Number,"taksitTutar":Number,"anaPara":Number,"kalanAnaPara":Number,"kar":Number,"kkdf":Number,"bsmv":Number,}
-}
-  // dataTable.length = 12;
-  // console.log(dataTable.length)
-  // console.log("dataTable", dataTable)
-  var taksitTutari = (form.amount * ((form.rate / 100) * (Math.pow((1 + (form.rate / 100)), (form.time)))) / (Math.pow((1 + (form.rate / 100)), (form.time)) - 1));
+  for (var i = 0; i < form.time; i++) {
+    dataTable[i] = { "taksitNo": Number, "taksitTutar": Number, "anaPara": Number, "kalanAnaPara": Number, "kar": Number, "kkdf": Number, "bsmv": Number, }
+  }
+  var taksitTutari = (form.amount * ((form.rate * 1.25 / 100) * (Math.pow((1 + (form.rate * 1.25 / 100)), (form.time)))) / (Math.pow((1 + (form.rate * 1.25 / 100)), (form.time)) - 1));
   var timeFactor = 1;
   if (form.times === "weeks") {
     timeFactor = 7 / 30;
