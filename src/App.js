@@ -20,125 +20,14 @@ function App() {
     kkdf: ""
   })
   const [table, setTable] = useState([])
-  var dataTable = [
-    {
-      "taksitNo": Number,
-      "taksitTutar": Number,
-      "anaPara": Number,
-      "kalanAnaPara": Number,
-      "kar": Number,
-      "kkdf": Number,
-      "bsmv": Number,
-    },
-    {
-      "taksitNo": Number,
-      "taksitTutar": Number,
-      "anaPara": Number,
-      "kalanAnaPara": Number,
-      "kar": Number,
-      "kkdf": Number,
-      "bsmv": Number,
-    },
-    {
-      "taksitNo": Number,
-      "taksitTutar": Number,
-      "anaPara": Number,
-      "kalanAnaPara": Number,
-      "kar": Number,
-      "kkdf": Number,
-      "bsmv": Number,
-    },
-    {
-      "taksitNo": Number,
-      "taksitTutar": Number,
-      "anaPara": Number,
-      "kalanAnaPara": Number,
-      "kar": Number,
-      "kkdf": Number,
-      "bsmv": Number,
-    },
-    {
-      "taksitNo": Number,
-      "taksitTutar": Number,
-      "anaPara": Number,
-      "kalanAnaPara": Number,
-      "kar": Number,
-      "kkdf": Number,
-      "bsmv": Number,
-    },
-    {
-      "taksitNo": Number,
-      "taksitTutar": Number,
-      "anaPara": Number,
-      "kalanAnaPara": Number,
-      "kar": Number,
-      "kkdf": Number,
-      "bsmv": Number,
-    },
-    {
-      "taksitNo": Number,
-      "taksitTutar": Number,
-      "anaPara": Number,
-      "kalanAnaPara": Number,
-      "kar": Number,
-      "kkdf": Number,
-      "bsmv": Number,
-    },
-    {
-      "taksitNo": Number,
-      "taksitTutar": Number,
-      "anaPara": Number,
-      "kalanAnaPara": Number,
-      "kar": Number,
-      "kkdf": Number,
-      "bsmv": Number,
-    },
-    {
-      "taksitNo": Number,
-      "taksitTutar": Number,
-      "anaPara": Number,
-      "kalanAnaPara": Number,
-      "kar": Number,
-      "kkdf": Number,
-      "bsmv": Number,
-    },
-    {
-      "taksitNo": Number,
-      "taksitTutar": Number,
-      "anaPara": Number,
-      "kalanAnaPara": Number,
-      "kar": Number,
-      "kkdf": Number,
-      "bsmv": Number,
-    },
-    {
-      "taksitNo": Number,
-      "taksitTutar": Number,
-      "anaPara": Number,
-      "kalanAnaPara": Number,
-      "kar": Number,
-      "kkdf": Number,
-      "bsmv": Number,
-    },
-    {
-      "taksitNo": Number,
-      "taksitTutar": Number,
-      "anaPara": Number,
-      "kalanAnaPara": Number,
-      "kar": Number,
-      "kkdf": Number,
-      "bsmv": Number,
-    }
-  ]
-  // dataTable.length = 12;
-  // var weeks = 30 / 30;
-  // var karOranı = (form.amount * form.rate * weeks)
-  // console.log("karOranı",karOranı)
-  // console.log(form.amount);
-  // form.rate = 0.0228;
-  // form.time = 12;
-  var rate1 = 2.85;
-  var taksitTutari = (form.amount * ((rate1 / 100) * (Math.pow((1 + (rate1 / 100)), (form.time)))) / (Math.pow((1 + (rate1 / 100)), (form.time)) - 1));
+  var dataTable = []
+  for(var i=0;i<form.time;i++){
+    dataTable[i]={"taksitNo":Number,"taksitTutar":Number,"anaPara":Number,"kalanAnaPara":Number,"kar":Number,"kkdf":Number,"bsmv":Number,}
+}
+  dataTable.length = 12;
+  console.log(dataTable.length)
+  console.log("dataTable", dataTable)
+  var taksitTutari = (form.amount * ((form.rate / 100) * (Math.pow((1 + (form.rate / 100)), (form.time)))) / (Math.pow((1 + (form.rate / 100)), (form.time)) - 1));
   var timeFactor = 1;
   if (form.times === "weeks") {
     timeFactor = 7 / 30;
@@ -146,7 +35,6 @@ function App() {
     timeFactor = 365 / 30;
   }
   var karTutari = (form.amount * (form.rate / 100) * timeFactor)
-  // console.log("taksitTutari", taksitTutari);
   dataTable.map((item, index) => {
     dataTable[index].taksitNo = index + 1;
     dataTable[index].taksitTutar = taksitTutari.toFixed(2);
@@ -165,7 +53,6 @@ function App() {
       var total = kar + k + b;
       dataTable[index].anaPara = (taksitTutari - total).toFixed(2);
       dataTable[index].kalanAnaPara = (dataTable[index - 1].kalanAnaPara - dataTable[index].anaPara).toFixed(2);
-      // dataTable[11].kalanAnaPara = 0;
     }
   })
 
