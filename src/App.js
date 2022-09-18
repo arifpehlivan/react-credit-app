@@ -24,9 +24,9 @@ function App() {
   for(var i=0;i<form.time;i++){
     dataTable[i]={"taksitNo":Number,"taksitTutar":Number,"anaPara":Number,"kalanAnaPara":Number,"kar":Number,"kkdf":Number,"bsmv":Number,}
 }
-  dataTable.length = 12;
-  console.log(dataTable.length)
-  console.log("dataTable", dataTable)
+  // dataTable.length = 12;
+  // console.log(dataTable.length)
+  // console.log("dataTable", dataTable)
   var taksitTutari = (form.amount * ((form.rate / 100) * (Math.pow((1 + (form.rate / 100)), (form.time)))) / (Math.pow((1 + (form.rate / 100)), (form.time)) - 1));
   var timeFactor = 1;
   if (form.times === "weeks") {

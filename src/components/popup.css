@@ -10,6 +10,8 @@
     align-items: center; */
     background: #F3F4F8;
     z-index: 10;
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
 .popupText {
